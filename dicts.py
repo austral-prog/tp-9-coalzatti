@@ -1,29 +1,31 @@
 def create_inventory(items):
     inventory = dict()
-    for item in items:
+    for i in items:
         counter = 0
         for k in items:
-            if item == k:
+            if i == k:
                 counter += 1
-                inventory[item]= counter  
+                inventory[i] = counter  
     return inventory
     
 
+
+
 def add_items(inventory, items):
-    for item in set(items):
-        if item in inventory:
-            counter = items.count(item)
-            inventory[item] += counter
+    for i in set(items):
+        if i in inventory:
+            counter = items.count(i)
+            inventory[i] += counter
         else:
-            inventory[item] = items.count(i)
+            inventory[i] = items.count(i)
     return inventory
 
 def decrement_items(inventory, items):
-    for item in set(items):
-        if inventory[item] != 0:
-            inventory[item] -= items.count(i)
-        if inventory[item] < 0:
-            inventory[item] = 0
+    for i in set(items):
+        if inventory[i] != 0:
+            inventory[i] -= items.count(i)
+        if inventory[i] < 0:
+            inventory[i] = 0
     return inventory
 
 
